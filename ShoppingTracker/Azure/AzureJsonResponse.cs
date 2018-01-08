@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 public class AzureJsonResponse
@@ -24,12 +25,16 @@ public class Region
     public Line[] Lines { get; set; }
 }
 
+
+[DebuggerDisplay("{LineText}")]
 public class Line
 {
     [JsonProperty("boundingBox")]
     public string BoundingBox { get; set; }
     [JsonProperty("words")]
     public Word[] Words { get; set; }
+
+    public string LineText => string.Join(" ", Words.Select(w => w.Text));
 }
 
 public class Word
