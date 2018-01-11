@@ -64,5 +64,10 @@ namespace ShoppingTracker
                 }
             }
         }
+
+        public Task<OcrResult> Process(string file)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

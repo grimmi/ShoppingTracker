@@ -45,5 +45,10 @@ namespace ShoppingTracker
                 return new OcrResult { Areas = words, Texts = words.Select(w => w.Text).ToList() };
             }
         }
+
+        public Task<OcrResult> Process(string file)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
